@@ -29,20 +29,27 @@ const DUMMY_MEALS = [
 ];
 
 const AvialableMeals = (props) => {
-  const mealsList = DUMMY_MEALS.map((meal) => <MealItem key={meal.id} name={meal.name} description={meal.description} price={meal.price}/>);
+  const mealsList = DUMMY_MEALS.map((meal) => (
+    <MealItem
+      id={meal.id} 
+      key={meal.id}
+      name={meal.name}
+      description={meal.description}
+      price={meal.price}
+    />
+  ));
   return (
     <Card className={classes.meals}>
       <section>
-      <ul>{mealsList}</ul> 
-    </section> 
+        <ul>{mealsList}</ul>
+      </section>
     </Card>
-    
   );
 };
 
 export default AvialableMeals;
 
-  /* wrap this list in a card component,
+/* wrap this list in a card component,
       container with rounded corners, white background is on
       the li should be another component the outputs data 
       
